@@ -3,166 +3,251 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الإمارات | رحلة في 3 محطات</title>
-<meta name="description" content="رحلة شبابية لاكتشاف هوية الإمارات وتراثها وقيمها ومستقبلها.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الإمارات | حكاية في ثلاث محطات</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --green: #103e32;
-  --green2: #1b5a46;
-  --gold: #c9a96a;
-  --cream: #f5f1e7;
-  --ink: #18392f;
-  --muted: #777b70;
+  --forest: #34463C;
+  --sage: #829687;
+  --sage-light: #DCE4DB;
+  --sand: #E9E0D2;
+  --cream: #F5F1E9;
+  --white: #FBF9F4;
+  --blue: #A8B9C0;
+  --gold: #CBAF91;
+  --text: #34463C;
+  --muted: #737970;
+  --line: #DED6C8;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
+  color: var(--text);
   background: var(--cream);
-  color: var(--ink);
   font-family: 'Tajawal', sans-serif;
 }
 a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
-  padding: 19px 7%;
-  background: var(--green);
-  color: white;
-  border-bottom: 1px solid #c9a96a55;
+  padding: 17px 7%;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
 }
 .brand {
   font-family: 'Alexandria', sans-serif;
+  font-size: 14px;
   font-weight: 700;
-  font-size: 15px;
 }
-.brand span { color: var(--gold); }
-.nav-links { display: flex; gap: 22px; font-size: 13px; }
-.nav-links a:hover { color: var(--gold); }
+.brand-mark { color: #829687; margin-left: 7px; }
+.nav-links { display: flex; gap: 24px; font-size: 13px; }
+.nav-links a:hover { color: #829687; }
 
 .hero {
-  background:
-    radial-gradient(ellipse at 85% 20%, #34654b 0%, transparent 40%),
-    linear-gradient(130deg, #0b2e26, #164c3b 65%, #213f31);
-  color: white;
-  padding: 82px 8% 72px;
   position: relative;
   overflow: hidden;
+  padding: 85px 8% 78px;
+  color: white;
+  background:
+    radial-gradient(ellipse at 85% 12%, #829687 0%, transparent 38%),
+    radial-gradient(ellipse at 5% 95%, #A8B9C025 0%, transparent 40%),
+    linear-gradient(130deg, #34463C, #526D5B);
 }
-.hero:after {
+.hero::before {
+  content: "✳";
+  position: absolute;
+  left: 7%;
+  top: 35px;
+  font-size: 120px;
+  color: #F5F1E9;
+  opacity: .09;
+}
+.hero::after {
   content: "الإمارات";
   position: absolute;
   left: -15px;
-  bottom: -58px;
+  bottom: -55px;
   font-family: 'Alexandria', sans-serif;
-  font-size: clamp(80px, 16vw, 200px);
+  font-size: clamp(85px, 17vw, 190px);
   font-weight: 800;
   color: #ffffff08;
   pointer-events: none;
 }
 .eyebrow {
-  color: var(--gold);
+  color: #E8D7C1;
   font-size: 12px;
-  letter-spacing: 2px;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 .hero h1 {
+  position: relative;
+  z-index: 1;
+  margin: 20px 0 12px;
   font-family: 'Alexandria', sans-serif;
-  font-size: clamp(35px, 6vw, 68px);
-  line-height: 1.55;
-  max-width: 800px;
-  margin: 18px 0;
+  font-size: clamp(36px, 6vw, 66px);
+  line-height: 1.65;
 }
-.hero h1 span { color: var(--gold); }
+.hero h1 span { color: #E8D7C1; }
 .hero p {
-  color: #e3e8df;
-  font-size: 18px;
-  line-height: 2;
   max-width: 570px;
+  color: #F0F1EA;
+  font-size: 17px;
+  line-height: 2;
 }
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: 18px;
   flex-wrap: wrap;
-  margin-top: 30px;
+  gap: 20px;
+  margin-top: 28px;
 }
 .button {
   display: inline-block;
-  background: var(--gold);
-  color: #18392f;
-  padding: 13px 23px;
-  border-radius: 4px;
+  padding: 13px 24px;
+  background: #E9E0D2;
+  color: #34463C;
+  border-radius: 5px;
   font-weight: 800;
-  transition: .2s;
+  transition: .25s;
 }
-.button:hover { transform: translateY(-3px); }
-.hero-note { font-size: 13px; color: #e2e5db; }
+.button:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+.hero-note { color: #F0F1EA; font-size: 13px; }
+
+/* منطقة الشعارات */
+.identity-strip {
+  padding: 26px 7% 32px;
+  background:
+    radial-gradient(ellipse at center, #FBF9F4 0%, #E9E0D2 100%);
+  border-bottom: 1px solid var(--line);
+}
+.identity-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 19px;
+  color: #657D6B;
+  font-size: 12px;
+  font-weight: 700;
+}
+.identity-heading span {
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+}
+.logo-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.logo-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 88px;
+  padding: 12px;
+  border: 1px solid #D8CCB9;
+  border-radius: 12px;
+  background: #FBF9F4;
+  box-shadow: 0 6px 18px #34463C0A;
+  transition: .25s;
+}
+.logo-frame:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px #34463C12;
+}
+.logo-frame img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.logo-placeholder {
+  color: #829687;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.7;
+}
 
 .intro {
-  padding: 65px 8% 25px;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 45px;
+  padding: 70px 8% 55px;
 }
 .section-tag {
-  color: #97763b;
-  font-weight: 800;
+  color: #758A79;
   font-size: 12px;
+  font-weight: 800;
   letter-spacing: 1px;
 }
 .intro h2, .section-heading h2 {
+  margin: 12px 0;
   font-family: 'Alexandria', sans-serif;
-  font-size: clamp(24px, 3vw, 34px);
-  line-height: 1.7;
-  margin: 10px 0;
+  font-size: clamp(25px, 3vw, 35px);
+  line-height: 1.8;
 }
-.intro p {
+.intro p, .section-heading p {
   color: var(--muted);
   line-height: 2;
   font-size: 16px;
-  margin: 0;
 }
 .quote {
+  padding: 26px;
   border-right: 3px solid var(--gold);
-  padding: 20px 24px;
-  background: #fffdf8;
+  border-radius: 5px 0 0 5px;
+  background: #FBF9F4;
+  box-shadow: 0 8px 25px #34463C08;
   font-family: 'Alexandria', sans-serif;
+  line-height: 2.1;
   font-size: 17px;
-  line-height: 2;
 }
 
-.stations { padding: 55px 8% 85px; }
-.section-heading { margin-bottom: 30px; }
-.section-heading p { color: var(--muted); line-height: 1.9; }
+.stations { padding: 35px 8% 85px; }
+.section-heading {
+  margin-bottom: 32px;
+  padding-right: 17px;
+  border-right: 3px solid var(--gold);
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 .card {
-  background: #fffdf8;
-  border: 1px solid #e5dfd0;
   overflow: hidden;
-  transition: transform .25s, box-shadow .25s;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  box-shadow: 0 8px 25px #34463C08;
+  transition: transform .3s, box-shadow .3s;
 }
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 38px #173d2b14;
+  box-shadow: 0 17px 35px #34463C13;
 }
 .card-image {
-  height: 225px;
   position: relative;
+  height: 225px;
   overflow: hidden;
-  background: var(--green);
+  background: var(--sage-light);
 }
 .card-image img {
   width: 100%;
@@ -175,96 +260,153 @@ nav {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: var(--cream);
-  color: var(--green);
   padding: 7px 12px;
+  background: #F5F1E9;
+  border: 1px solid var(--gold);
+  color: var(--forest);
   font-family: 'Alexandria', sans-serif;
-  font-weight: 800;
   font-size: 12px;
+  font-weight: 800;
 }
-.card-content { padding: 24px; }
+.card-content { padding: 23px; }
 .category {
-  color: #98773e;
+  color: #758A79;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1px;
 }
 .card h3 {
+  margin: 9px 0 4px;
   font-family: 'Alexandria', sans-serif;
   font-size: 19px;
   line-height: 1.8;
-  margin: 9px 0 4px;
 }
 .location { color: var(--muted); font-size: 13px; }
-.card p { line-height: 2; color: #646b61; font-size: 15px; }
+.card p {
+  min-height: 86px;
+  color: #646B61;
+  font-size: 15px;
+  line-height: 2;
+}
 .card-bottom {
-  border-top: 1px solid #e9e3d7;
   padding-top: 13px;
-  color: var(--green2);
+  border-top: 1px solid var(--line);
+  color: #657D6B;
   font-weight: 800;
   font-size: 13px;
 }
 
-.values {
-  margin: 0 8% 80px;
-  padding: 43px;
-  background: var(--green);
-  color: white;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
+.route {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 0 8% 75px;
+  padding: 23px;
+  border: 1px solid #D8CCB9;
+  background: #E9E0D2;
+  border-radius: 7px;
 }
-.values h2 {
-  font-family: 'Alexandria', sans-serif;
-  line-height: 1.8;
-  font-size: 25px;
-  margin: 0;
-}
-.values p { color: #e0e6dd; line-height: 2; }
-.values-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.value-item {
-  padding: 15px;
-  border: 1px solid #c9a96a66;
-  color: #f4e5c6;
-  text-align: center;
+.route-stop {
+  padding: 10px 16px;
+  background: #FBF9F4;
+  border: 1px solid #DED6C8;
+  border-radius: 30px;
+  font-size: 13px;
   font-weight: 700;
 }
+.route-arrow { color: #829687; }
+
+.values {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+  margin: 0 8% 75px;
+  padding: 42px;
+  color: white;
+  background:
+    radial-gradient(ellipse at 100% 0%, #829687 0%, transparent 45%),
+    #34463C;
+  border: 1px solid #CBAF9160;
+  border-radius: 7px;
+}
+.values h2 {
+  margin: 12px 0;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 25px;
+  line-height: 1.9;
+}
+.values p { color: #E7EBE4; line-height: 2; }
+.values-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.value-item {
+  padding: 16px 10px;
+  border: 1px solid #E9E0D266;
+  background: #ffffff08;
+  color: #F2E6D5;
+  text-align: center;
+  font-weight: 700;
+  transition: .2s;
+}
+.value-item:hover {
+  background: #E9E0D2;
+  color: #34463C;
+}
+
 .closing {
   padding: 55px 8%;
   text-align: center;
-  background: #eae4d5;
+  background: #E9E0D2;
+  border-top: 1px solid var(--line);
 }
-.closing .ornament { color: #a48244; font-size: 24px; }
+.ornament { color: #A88E6E; font-size: 23px; }
 .closing h2 {
   font-family: 'Alexandria', sans-serif;
-  font-size: clamp(21px, 3vw, 32px);
+  font-size: clamp(22px, 3vw, 32px);
   line-height: 2;
 }
-.closing p { color: var(--muted); }
+.closing p { color: var(--muted); line-height: 1.9; }
+
 footer {
-  background: #0b2e26;
-  color: #e5e6dc;
-  padding: 25px 8%;
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 15px;
+  padding: 25px 8%;
+  color: #F5F1E9;
+  background: #34463C;
+  border-top: 3px solid var(--gold);
   font-size: 12px;
 }
-footer strong { color: var(--gold); }
+footer strong { color: #E9D5BB; }
 
-@media (max-width: 760px) {
-  nav { padding: 17px 5%; }
-  .nav-links { gap: 12px; font-size: 11px; }
-  .brand { font-size: 12px; }
-  .hero { padding: 60px 6%; }
-  .intro { grid-template-columns: 1fr; padding: 45px 6% 20px; gap: 20px; }
-  .stations { padding: 40px 6% 55px; }
+@media (max-width: 800px) {
   .cards { grid-template-columns: 1fr; }
-  .card-image { height: 240px; }
-  .values { margin: 0 6% 50px; padding: 28px 22px; grid-template-columns: 1fr; }
-  .closing { padding: 40px 6%; }
+  .card-image { height: 260px; }
+  .card p { min-height: 0; }
+  .intro, .values { grid-template-columns: 1fr; }
+  .intro { gap: 20px; }
+  .nav-links { gap: 12px; }
+}
+@media (max-width: 520px) {
+  nav { padding: 15px 5%; }
+  .brand { font-size: 12px; }
+  .nav-links { font-size: 11px; gap: 10px; }
+  .hero { padding: 60px 6%; }
+  .intro, .stations { padding-right: 6%; padding-left: 6%; }
+  .logo-gallery { gap: 10px; }
+  .logo-frame { width: 100px; height: 72px; padding: 8px; }
+  .values { margin: 0 6% 50px; padding: 25px 20px; }
+  .route { margin-right: 6%; margin-left: 6%; }
+  footer { padding: 23px 6%; }
 }
 </style>
 </head>
@@ -272,7 +414,9 @@ footer strong { color: var(--gold); }
 <body>
 
 <nav>
-  <a class="brand" href="#home">الإمارات <span>•</span> حكاية وطن</a>
+  <a class="brand" href="#home">
+    <span class="brand-mark">✳</span> الإمارات | حكاية وطن
+  </a>
   <div class="nav-links">
     <a href="#about">عن الرحلة</a>
     <a href="#stations">المحطات</a>
@@ -281,26 +425,47 @@ footer strong { color: var(--gold); }
 </nav>
 
 <header class="hero" id="home">
-  <div class="eyebrow">رحلة شبابية لاكتشاف الوطن · 01 / 03</div>
+  <div class="eyebrow">رحلة شبابية لاكتشاف الوطن</div>
   <h1>الإمارات<br><span>رحلة في 3 محطات</span></h1>
   <p>
     يوم واحد، وثلاث محطات تحكي قصة وطن؛
-    من جذورٍ نفخر بها، إلى قيمٍ تجمعنا،
-    ومستقبلٍ نصنعه معًا.
+    من جذور نفخر بها، إلى قيم تجمعنا،
+    ومستقبل نصنعه معًا.
   </p>
   <div class="hero-actions">
-    <a class="button" href="#stations">ابدأ الرحلة ←</a>
+    <a class="button" href="#stations">اكتشف المحطات ←</a>
     <span class="hero-note">الهوية · الثقافة · الابتكار</span>
   </div>
 </header>
+
+<!-- استبدلي أسماء الملفات بالشعارات الأصلية -->
+<section class="identity-strip" aria-label="شعارات الجهات المشاركة">
+  <div class="identity-heading">
+    <span></span>
+    شركاء الهوية والرؤية الشبابية
+    <span></span>
+  </div>
+  <div class="logo-gallery">
+    <div class="logo-frame">
+      <img src="images/logo1.png" alt="الشعار الأول">
+    </div>
+    <div class="logo-frame">
+      <img src="images/logo2.png" alt="الشعار الثاني">
+    </div>
+    <div class="logo-frame">
+      <img src="images/logo3.png" alt="الشعار الثالث">
+    </div>
+  </div>
+</section>
 
 <section class="intro" id="about">
   <div>
     <div class="section-tag">حكاية تتجاوز المكان</div>
     <h2>لكل مكان حكاية،<br>ولكل حكاية قيمة.</h2>
     <p>
-      صُممت هذه الرحلة لتعريف الطالب الزائر بروح الإمارات،
-      من تفاصيل الحياة القديمة إلى قيم مجتمعها وطموحها للمستقبل.
+      رحلة تعريفية تأخذ الطالب الزائر في تجربة تجمع التراث
+      الإماراتي والقيم الإنسانية وروح الابتكار، ليكتشف
+      كيف تلتقي أصالة الماضي مع طموح المستقبل.
     </p>
   </div>
   <div class="quote">
@@ -311,30 +476,29 @@ footer strong { color: var(--gold); }
 
 <section class="stations" id="stations">
   <div class="section-heading">
-    <div class="section-tag">مسار الرحلة · ثلاث تجارب</div>
-    <h2>محطات تروي قصة الإمارات</h2>
-    <p>ثلاث زوايا مختلفة، تجمعها هوية وطن واحد.</p>
+    <div class="section-tag">مسار الرحلة · 01 — 03</div>
+    <h2>ثلاث محطات، حكاية واحدة</h2>
+    <p>من الذاكرة إلى القيم، ومن القيم إلى المستقبل.</p>
   </div>
 
   <div class="cards">
-
     <article class="card">
       <div class="card-image">
         <img
           src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85"
-          alt="مشهد من مدينة دبي"
+          alt="مشهد حضري في دبي"
           loading="lazy">
         <span class="number">01</span>
       </div>
       <div class="card-content">
-        <div class="category">الماضي · الجذور</div>
+        <div class="category">الجذور · التراث</div>
         <h3>ذاكرة المكان</h3>
         <div class="location">حي الفهيدي التاريخي · دبي</div>
         <p>
           نستكشف البيوت التراثية والأبراج الهوائية،
           ونتعرّف إلى حياة الأجداد وعاداتهم الأصيلة.
         </p>
-        <div class="card-bottom">التراث والهوية الإماراتية ↗</div>
+        <div class="card-bottom">أصالة التراث والهوية ✧</div>
       </div>
     </article>
 
@@ -347,14 +511,14 @@ footer strong { color: var(--gold); }
         <span class="number">02</span>
       </div>
       <div class="card-content">
-        <div class="category">الحاضر · القيم</div>
+        <div class="category">القيم · التعايش</div>
         <h3>قيم تجمعنا</h3>
         <div class="location">جامع الشيخ زايد الكبير · أبوظبي</div>
         <p>
           نتأمل جمال العمارة الإسلامية،
           ونتعرّف إلى قيم التسامح والاحترام والتعايش.
         </p>
-        <div class="card-bottom">التسامح والتعايش ↗</div>
+        <div class="card-bottom">احترام الآخر والتسامح ✧</div>
       </div>
     </article>
 
@@ -362,54 +526,60 @@ footer strong { color: var(--gold); }
       <div class="card-image">
         <img
           src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85"
-          alt="تقنيات ودوائر إلكترونية ترمز إلى الابتكار"
+          alt="تقنيات إلكترونية ترمز إلى الابتكار"
           loading="lazy">
         <span class="number">03</span>
       </div>
       <div class="card-content">
-        <div class="category">المستقبل · الطموح</div>
+        <div class="category">الطموح · المستقبل</div>
         <h3>نصنع الغد</h3>
         <div class="location">متحف المستقبل · دبي</div>
         <p>
-          نستكشف عالم الابتكار والتكنولوجيا،
+          نستكشف أفكار الابتكار والتكنولوجيا،
           ونقترح فكرة شبابية لمستقبل أكثر استدامة.
         </p>
-        <div class="card-bottom">الابتكار والاستدامة ↗</div>
+        <div class="card-bottom">الإبداع وصناعة المستقبل ✧</div>
       </div>
     </article>
-
   </div>
 </section>
+
+<div class="route" aria-label="تسلسل المحطات">
+  <span class="route-stop">01 · الجذور</span>
+  <span class="route-arrow">←</span>
+  <span class="route-stop">02 · القيم</span>
+  <span class="route-arrow">←</span>
+  <span class="route-stop">03 · المستقبل</span>
+</div>
 
 <section class="values">
   <div>
     <div class="eyebrow">ما الذي نحمله معنا؟</div>
-    <h2>الإمارات ليست مكانًا نزوره فقط،<br>بل قيمٌ نعيشها ومستقبلٌ نبنيه.</h2>
+    <h2>وطن نعتز به،<br>ومستقبل نبنيه معًا.</h2>
     <p>
-      رحلة تذكّرنا بأن قوة الوطن في أصالته،
-      وتماسك مجتمعه، وإبداع أبنائه.
+      قوة الإمارات في هويتها الأصيلة، ومجتمعها المتماسك،
+      وأبنائها الذين يحوّلون الأفكار إلى إنجازات.
     </p>
   </div>
   <div class="values-list">
     <div class="value-item">الهوية الوطنية</div>
-    <div class="value-item">التسامح</div>
+    <div class="value-item">التسامح والتعايش</div>
     <div class="value-item">الابتكار</div>
     <div class="value-item">الاستدامة</div>
   </div>
 </section>
 
 <section class="closing" id="message">
-  <div class="ornament">✦ ───── ✦</div>
-  <h2>من جذورٍ نعتز بها،<br>إلى مستقبلٍ نصنعه معًا.</h2>
+  <div class="ornament">✧ ───── ✧</div>
+  <h2>من جذور نعتز بها،<br>إلى مستقبل نصنعه معًا.</h2>
   <p>الإمارات حكاية وطن تتجدد بأبنائه.</p>
 </section>
 
 <footer>
   <div>إعداد الطالبة: <strong>طيف اليماحي</strong></div>
-  <div>الصف: <strong>يُضاف هنا</strong></div>
-  <div>الإمارات · هويةٌ وطموح</div>
+  <div>الصف: <strong>أضيفي صفج هنا</strong></div>
+  <div>الإمارات · هوية وطموح</div>
 </footer>
 
 </body>
 </html>
-
