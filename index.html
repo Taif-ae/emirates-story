@@ -1,334 +1,415 @@
-```html
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الإمارات.. حكاية وطن | طيف اليماحي</title>
+<title>الإمارات | رحلة في 3 محطات</title>
+<meta name="description" content="رحلة شبابية لاكتشاف هوية الإمارات وتراثها وقيمها ومستقبلها.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root {
-  --green:#07583f;
-  --dark:#043d2c;
-  --gold:#d9b568;
-  --sand:#f7f1e5;
-  --red:#c83c42;
+  --green: #103e32;
+  --green2: #1b5a46;
+  --gold: #c9a96a;
+  --cream: #f5f1e7;
+  --ink: #18392f;
+  --muted: #777b70;
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  margin:0;
-  font-family:Tahoma,Arial,sans-serif;
-  background:var(--sand);
-  color:#203c30;
-  line-height:1.9;
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Tajawal', sans-serif;
 }
-header {
-  padding:14px 7%;
-  background:white;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:12px;
-  border-bottom:1px solid #e9dfcb;
+a { color: inherit; text-decoration: none; }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 19px 7%;
+  background: var(--green);
+  color: white;
+  border-bottom: 1px solid #c9a96a55;
 }
-.brand { color:var(--green);font-weight:bold;font-size:1.2rem; }
-nav { display:flex;gap:18px;flex-wrap:wrap; }
-nav a { text-decoration:none;color:var(--green);font-weight:bold; }
+.brand {
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+.brand span { color: var(--gold); }
+.nav-links { display: flex; gap: 22px; font-size: 13px; }
+.nav-links a:hover { color: var(--gold); }
+
 .hero {
-  text-align:center;
-  padding:75px 7% 90px;
-  color:white;
-  background:radial-gradient(circle at top left,#ffffff20,transparent 35%),
-  linear-gradient(135deg,var(--dark),var(--green),#867047);
+  background:
+    radial-gradient(ellipse at 85% 20%, #34654b 0%, transparent 40%),
+    linear-gradient(130deg, #0b2e26, #164c3b 65%, #213f31);
+  color: white;
+  padding: 82px 8% 72px;
+  position: relative;
+  overflow: hidden;
 }
-.logos {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
-  margin-bottom:25px;
+.hero:after {
+  content: "الإمارات";
+  position: absolute;
+  left: -15px;
+  bottom: -58px;
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(80px, 16vw, 200px);
+  font-weight: 800;
+  color: #ffffff08;
+  pointer-events: none;
 }
-.logos img {
-  width:90px;height:90px;object-fit:contain;
-  background:white;border-radius:14px;padding:8px;
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
 }
-.eyebrow { color:var(--gold);font-weight:bold; }
-h1 { font-size:clamp(2.2rem,6vw,4.5rem);line-height:1.35;margin:12px 0; }
-.hero p { max-width:700px;margin:18px auto 28px;color:#f7efdf; }
+.hero h1 {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(35px, 6vw, 68px);
+  line-height: 1.55;
+  max-width: 800px;
+  margin: 18px 0;
+}
+.hero h1 span { color: var(--gold); }
+.hero p {
+  color: #e3e8df;
+  font-size: 18px;
+  line-height: 2;
+  max-width: 570px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
 .button {
-  display:inline-block;
-  border:0;border-radius:28px;padding:12px 24px;
-  background:var(--gold);color:#153d2e;
-  text-decoration:none;font:inherit;font-weight:bold;cursor:pointer;
+  display: inline-block;
+  background: var(--gold);
+  color: #18392f;
+  padding: 13px 23px;
+  border-radius: 4px;
+  font-weight: 800;
+  transition: .2s;
 }
-section { padding:60px 7%; }
-.heading { text-align:center;max-width:700px;margin:0 auto 32px; }
-.heading h2 { color:var(--green);font-size:2rem;margin:0; }
-.heading p { color:#64766b; }
-.stations {
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;
+.button:hover { transform: translateY(-3px); }
+.hero-note { font-size: 13px; color: #e2e5db; }
+
+.intro {
+  padding: 65px 8% 25px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+.section-tag {
+  color: #97763b;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.intro h2, .section-heading h2 {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.7;
+  margin: 10px 0;
+}
+.intro p {
+  color: var(--muted);
+  line-height: 2;
+  font-size: 16px;
+  margin: 0;
+}
+.quote {
+  border-right: 3px solid var(--gold);
+  padding: 20px 24px;
+  background: #fffdf8;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 17px;
+  line-height: 2;
+}
+
+.stations { padding: 55px 8% 85px; }
+.section-heading { margin-bottom: 30px; }
+.section-heading p { color: var(--muted); line-height: 1.9; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
 .card {
-  background:white;border:1px solid #e9dfcb;
-  border-radius:20px;overflow:hidden;
-  box-shadow:0 10px 28px #17382c0c;
-  transition:transform .2s;
+  background: #fffdf8;
+  border: 1px solid #e5dfd0;
+  overflow: hidden;
+  transition: transform .25s, box-shadow .25s;
 }
-.card:hover { transform:translateY(-5px); }
-.art {
-  min-height:150px;display:grid;place-items:center;
-  font-size:4rem;background:linear-gradient(135deg,#e9d7af,#faf3e5);
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px #173d2b14;
 }
-.card:nth-child(2) .art { background:linear-gradient(135deg,#d4e5d8,#f6f4e9); }
-.card:nth-child(3) .art { background:linear-gradient(135deg,#d7e3ef,#f7efdf); }
-.card-content { padding:23px; }
-.card h3 { color:var(--green);margin:0 0 8px; }
-.card p { color:#62746a; }
-.card .button { background:var(--green);color:white; }
-.values { background:white;border-block:1px solid #e9dfcb; }
-.value-grid {
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:15px;max-width:1050px;margin:auto;
+.card-image {
+  height: 225px;
+  position: relative;
+  overflow: hidden;
+  background: var(--green);
 }
-.value { text-align:center;padding:22px 10px;background:var(--sand);border-radius:16px; }
-.value span { font-size:2rem; }
-.value h3 { color:var(--green);margin:6px 0; }
-.value p { margin:0;font-size:.9rem;color:#64766b; }
-.welcome { background:var(--dark);color:white;text-align:center; }
-.welcome h2 { color:var(--gold);font-size:2rem; }
-.welcome p { max-width:750px;margin:auto; }
-.student {
-  max-width:760px;margin:auto;padding:28px;
-  text-align:center;background:white;border-radius:20px;
-  border:1px solid #e9dfcb;
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
 }
-.student h2 { color:var(--green); }
-.student-line { padding:8px;border-bottom:1px solid #eee5d6; }
-.student-logos {
-  display:flex;justify-content:center;align-items:center;
-  flex-wrap:wrap;gap:22px;margin-top:24px;
+.card:hover .card-image img { transform: scale(1.05); }
+.number {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--cream);
+  color: var(--green);
+  padding: 7px 12px;
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
 }
-.student-logos img { width:110px;height:110px;object-fit:contain; }
-footer { background:#052f24;color:#e8eadf;text-align:center;padding:25px; }
-.modal {
-  display:none;position:fixed;inset:0;z-index:10;
-  padding:20px;background:#071e17bb;
-  align-items:center;justify-content:center;
+.card-content { padding: 24px; }
+.category {
+  color: #98773e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
-.modal.open { display:flex; }
-.modal-card {
-  width:100%;max-width:620px;max-height:85vh;overflow:auto;
-  padding:28px;background:white;border-radius:20px;position:relative;
+.card h3 {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 19px;
+  line-height: 1.8;
+  margin: 9px 0 4px;
 }
-.modal-card h2 { color:var(--green); }
-.close {
-  position:absolute;top:8px;left:14px;border:0;
-  background:none;font-size:2rem;cursor:pointer;color:var(--green);
+.location { color: var(--muted); font-size: 13px; }
+.card p { line-height: 2; color: #646b61; font-size: 15px; }
+.card-bottom {
+  border-top: 1px solid #e9e3d7;
+  padding-top: 13px;
+  color: var(--green2);
+  font-weight: 800;
+  font-size: 13px;
 }
-.question { background:var(--sand);padding:15px;border-radius:12px;margin-top:18px; }
-.answer {
-  display:inline-block;margin:8px 5px 4px 0;padding:8px 13px;
-  border:1px solid #d5c7a9;border-radius:9px;background:white;
-  cursor:pointer;font:inherit;
+
+.values {
+  margin: 0 8% 80px;
+  padding: 43px;
+  background: var(--green);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
 }
-#feedback { color:var(--green);font-weight:bold; }
-@media(max-width:800px) {
-  .stations { grid-template-columns:1fr; }
-  .value-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  header { justify-content:center; }
-  nav { justify-content:center; }
+.values h2 {
+  font-family: 'Alexandria', sans-serif;
+  line-height: 1.8;
+  font-size: 25px;
+  margin: 0;
+}
+.values p { color: #e0e6dd; line-height: 2; }
+.values-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.value-item {
+  padding: 15px;
+  border: 1px solid #c9a96a66;
+  color: #f4e5c6;
+  text-align: center;
+  font-weight: 700;
+}
+.closing {
+  padding: 55px 8%;
+  text-align: center;
+  background: #eae4d5;
+}
+.closing .ornament { color: #a48244; font-size: 24px; }
+.closing h2 {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(21px, 3vw, 32px);
+  line-height: 2;
+}
+.closing p { color: var(--muted); }
+footer {
+  background: #0b2e26;
+  color: #e5e6dc;
+  padding: 25px 8%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+footer strong { color: var(--gold); }
+
+@media (max-width: 760px) {
+  nav { padding: 17px 5%; }
+  .nav-links { gap: 12px; font-size: 11px; }
+  .brand { font-size: 12px; }
+  .hero { padding: 60px 6%; }
+  .intro { grid-template-columns: 1fr; padding: 45px 6% 20px; gap: 20px; }
+  .stations { padding: 40px 6% 55px; }
+  .cards { grid-template-columns: 1fr; }
+  .card-image { height: 240px; }
+  .values { margin: 0 6% 50px; padding: 28px 22px; grid-template-columns: 1fr; }
+  .closing { padding: 40px 6%; }
 }
 </style>
 </head>
+
 <body>
 
-<header>
-  <div class="brand">🇦🇪 حكاية الإمارات</div>
-  <nav>
+<nav>
+  <a class="brand" href="#home">الإمارات <span>•</span> حكاية وطن</a>
+  <div class="nav-links">
+    <a href="#about">عن الرحلة</a>
     <a href="#stations">المحطات</a>
-    <a href="#values">قيمنا</a>
-    <a href="#about">عن المشروع</a>
-  </nav>
+    <a href="#message">رسالتنا</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="eyebrow">رحلة شبابية لاكتشاف الوطن · 01 / 03</div>
+  <h1>الإمارات<br><span>رحلة في 3 محطات</span></h1>
+  <p>
+    يوم واحد، وثلاث محطات تحكي قصة وطن؛
+    من جذورٍ نفخر بها، إلى قيمٍ تجمعنا،
+    ومستقبلٍ نصنعه معًا.
+  </p>
+  <div class="hero-actions">
+    <a class="button" href="#stations">ابدأ الرحلة ←</a>
+    <span class="hero-note">الهوية · الثقافة · الابتكار</span>
+  </div>
 </header>
 
-<main>
-<section class="hero">
-  <div class="logos">
-    <img src="assets/moe-logo.png" alt="شعار وزارة التربية والتعليم">
-    <img src="assets/youth-leaders-path.png.png" alt="شعار برنامج مسار القادة الشباب">
+<section class="intro" id="about">
+  <div>
+    <div class="section-tag">حكاية تتجاوز المكان</div>
+    <h2>لكل مكان حكاية،<br>ولكل حكاية قيمة.</h2>
+    <p>
+      صُممت هذه الرحلة لتعريف الطالب الزائر بروح الإمارات،
+      من تفاصيل الحياة القديمة إلى قيم مجتمعها وطموحها للمستقبل.
+    </p>
   </div>
-  <div class="eyebrow">رحلة في الهوية والإنجاز</div>
-  <h1>الإمارات.. حكاية وطن</h1>
-  <p>
-    ثلاث محطات، وقصة وطن يجمع أصالة الماضي، وقيم الإنسان،
-    وطموح المستقبل. تعرّف إلى الإمارات من قلب حكايتها.
-  </p>
-  <a class="button" href="#stations">ابدأ الرحلة ←</a>
+  <div class="quote">
+    «نفخر بجذورنا، نحتفي بقيمنا،
+    ونصنع مستقبلنا بثقة وطموح.»
+  </div>
 </section>
 
-<section id="stations">
-  <div class="heading">
-    <div class="eyebrow">اكتشف • تعرّف • شارك</div>
-    <h2>محطات من حكايتنا</h2>
-    <p>اختر محطة لتكتشف جانبًا من هوية دولة الإمارات العربية المتحدة.</p>
+<section class="stations" id="stations">
+  <div class="section-heading">
+    <div class="section-tag">مسار الرحلة · ثلاث تجارب</div>
+    <h2>محطات تروي قصة الإمارات</h2>
+    <p>ثلاث زوايا مختلفة، تجمعها هوية وطن واحد.</p>
   </div>
 
-  <div class="stations">
+  <div class="cards">
+
     <article class="card">
-      <div class="art">🏺</div>
+      <div class="card-image">
+        <img
+          src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85"
+          alt="مشهد من مدينة دبي"
+          loading="lazy">
+        <span class="number">01</span>
+      </div>
       <div class="card-content">
-        <h3>المحطة الأولى: جذورنا تحكي</h3>
-        <p>نتعرّف إلى التراث الإماراتي والمجلس والقهوة العربية والحرف التي تحفظ ذاكرة الأجداد.</p>
-        <button class="button" onclick="openStation(0)">اكتشف التراث</button>
+        <div class="category">الماضي · الجذور</div>
+        <h3>ذاكرة المكان</h3>
+        <div class="location">حي الفهيدي التاريخي · دبي</div>
+        <p>
+          نستكشف البيوت التراثية والأبراج الهوائية،
+          ونتعرّف إلى حياة الأجداد وعاداتهم الأصيلة.
+        </p>
+        <div class="card-bottom">التراث والهوية الإماراتية ↗</div>
       </div>
     </article>
 
     <article class="card">
-      <div class="art">🤝</div>
+      <div class="card-image">
+        <img
+          src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=900&q=85"
+          alt="عمارة مسجد إسلامي"
+          loading="lazy">
+        <span class="number">02</span>
+      </div>
       <div class="card-content">
-        <h3>المحطة الثانية: قيمنا تجمعنا</h3>
-        <p>نتعرّف إلى الكرم والتسامح والاحترام والتعايش، وكيف تصنع هذه القيم مجتمعًا متماسكًا.</p>
-        <button class="button" onclick="openStation(1)">اكتشف قيمنا</button>
+        <div class="category">الحاضر · القيم</div>
+        <h3>قيم تجمعنا</h3>
+        <div class="location">جامع الشيخ زايد الكبير · أبوظبي</div>
+        <p>
+          نتأمل جمال العمارة الإسلامية،
+          ونتعرّف إلى قيم التسامح والاحترام والتعايش.
+        </p>
+        <div class="card-bottom">التسامح والتعايش ↗</div>
       </div>
     </article>
 
     <article class="card">
-      <div class="art">🚀</div>
+      <div class="card-image">
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85"
+          alt="تقنيات ودوائر إلكترونية ترمز إلى الابتكار"
+          loading="lazy">
+        <span class="number">03</span>
+      </div>
       <div class="card-content">
-        <h3>المحطة الثالثة: طموح بلا حدود</h3>
-        <p>من قيام الاتحاد إلى استكشاف الفضاء والابتكار، نرى كيف تتحول الرؤية إلى إنجاز.</p>
-        <button class="button" onclick="openStation(2)">اكتشف المستقبل</button>
+        <div class="category">المستقبل · الطموح</div>
+        <h3>نصنع الغد</h3>
+        <div class="location">متحف المستقبل · دبي</div>
+        <p>
+          نستكشف عالم الابتكار والتكنولوجيا،
+          ونقترح فكرة شبابية لمستقبل أكثر استدامة.
+        </p>
+        <div class="card-bottom">الابتكار والاستدامة ↗</div>
       </div>
     </article>
+
   </div>
 </section>
 
-<section class="values" id="values">
-  <div class="heading">
-    <h2>قيم إماراتية نعتز بها</h2>
-    <p>قيم نعيشها كل يوم ونحملها معنا أينما ذهبنا.</p>
+<section class="values">
+  <div>
+    <div class="eyebrow">ما الذي نحمله معنا؟</div>
+    <h2>الإمارات ليست مكانًا نزوره فقط،<br>بل قيمٌ نعيشها ومستقبلٌ نبنيه.</h2>
+    <p>
+      رحلة تذكّرنا بأن قوة الوطن في أصالته،
+      وتماسك مجتمعه، وإبداع أبنائه.
+    </p>
   </div>
-  <div class="value-grid">
-    <div class="value"><span>☕</span><h3>الكرم</h3><p>حسن الضيافة وإكرام الزائر.</p></div>
-    <div class="value"><span>🕊️</span><h3>التسامح</h3><p>احترام الاختلاف والتفاهم.</p></div>
-    <div class="value"><span>🤲</span><h3>التعاون</h3><p>العمل معًا لتحقيق الخير.</p></div>
-    <div class="value"><span>🌱</span><h3>الاستدامة</h3><p>حماية الموارد للأجيال القادمة.</p></div>
+  <div class="values-list">
+    <div class="value-item">الهوية الوطنية</div>
+    <div class="value-item">التسامح</div>
+    <div class="value-item">الابتكار</div>
+    <div class="value-item">الاستدامة</div>
   </div>
 </section>
 
-<section class="welcome">
-  <div class="eyebrow">أهلًا بك في الإمارات</div>
-  <h2>وطن نعتز به، ومستقبل نصنعه</h2>
-  <p>
-    الإمارات حكاية اتحاد وطموح وثقافة أصيلة.
-    وطن يرحّب بالعالم ويؤمن بأن المستقبل يبدأ بالإنسان،
-    وبأن المعرفة والعمل يصنعان الإنجازات.
-  </p>
+<section class="closing" id="message">
+  <div class="ornament">✦ ───── ✦</div>
+  <h2>من جذورٍ نعتز بها،<br>إلى مستقبلٍ نصنعه معًا.</h2>
+  <p>الإمارات حكاية وطن تتجدد بأبنائه.</p>
 </section>
-
-<section id="about">
-  <div class="student">
-    <div class="eyebrow">إعداد وإنجاز الطالبة</div>
-    <h2>طيف عبدالله اليماحي</h2>
-    <div class="student-line">الصف التاسع</div>
-    <div class="student-line">مدرسة مضب – الحلقة الثالثة بنات</div>
-    <div class="student-logos">
-      <img src="assets/moe-logo.png" alt="شعار وزارة التربية والتعليم">
-      <img src="assets/youth-leaders-path.png.png" alt="شعار برنامج مسار القادة الشباب">
-    </div>
-  </div>
-</section>
-</main>
 
 <footer>
-  الإمارات.. حكاية وطن 🇦🇪
-  <br>
-  مشروع تعريفي بالهوية الإماراتية وثقافتها وقيمها
+  <div>إعداد الطالبة: <strong>طيف اليماحي</strong></div>
+  <div>الصف: <strong>يُضاف هنا</strong></div>
+  <div>الإمارات · هويةٌ وطموح</div>
 </footer>
 
-<div class="modal" id="stationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="outsideClose(event)">
-  <div class="modal-card">
-    <button class="close" onclick="closeStation()" aria-label="إغلاق">×</button>
-    <div class="eyebrow" id="modalEyebrow"></div>
-    <h2 id="modalTitle"></h2>
-    <p id="modalText"></p>
-    <div class="question">
-      <strong id="questionText"></strong>
-      <div id="answers"></div>
-      <p id="feedback" aria-live="polite"></p>
-    </div>
-  </div>
-</div>
-
-<script>
-const stations = [
-  {
-    title:"جذورنا تحكي",
-    text:"يشكّل التراث الإماراتي جسرًا بين الأجيال. ففي المجلس يتبادل الناس الحديث والخبرات، وتعبّر القهوة العربية عن حسن الاستقبال. وتحفظ الحرف التقليدية مثل السدو جانبًا من خبرة الأجداد وحياتهم.",
-    question:"أيّ مما يلي رمز من رموز الضيافة الإماراتية؟",
-    answers:["القهوة العربية","إغلاق المجلس","رفض استقبال الضيوف"],
-    correct:0,
-    feedback:"القهوة العربية رمز للكرم وحسن الضيافة."
-  },
-  {
-    title:"قيمنا تجمعنا",
-    text:"يقوم المجتمع المتماسك على احترام الآخرين والتسامح والتعاون. ويعني التعايش أن يعيش أشخاص من خلفيات مختلفة باحترام متبادل.",
-    question:"ما السلوك الذي يعكس قيمة التسامح؟",
-    answers:["السخرية من الآخرين","احترام الاختلاف","رفض التعاون"],
-    correct:1,
-    feedback:"احترام الاختلاف يساعد على بناء مجتمع متماسك."
-  },
-  {
-    title:"طموح بلا حدود",
-    text:"تسعى الإمارات إلى بناء مستقبل قائم على العلم والابتكار. ووصل مسبار الأمل الإماراتي إلى مدار المريخ عام 2021، ليعكس طموح العلماء والمهندسين الإماراتيين.",
-    question:"ما اسم المشروع الإماراتي لاستكشاف المريخ؟",
-    answers:["مسبار الأمل","القهوة العربية","السدو"],
-    correct:0,
-    feedback:"مسبار الأمل إنجاز علمي إماراتي في استكشاف الفضاء."
-  }
-];
-
-function openStation(index) {
-  const s = stations[index];
-  document.getElementById("modalEyebrow").textContent = "المحطة " + (index+1) + " من 3";
-  document.getElementById("modalTitle").textContent = s.title;
-  document.getElementById("modalText").textContent = s.text;
-  document.getElementById("questionText").textContent = s.question;
-  document.getElementById("feedback").textContent = "";
-  const area = document.getElementById("answers");
-  area.replaceChildren();
-
-  s.answers.forEach((answer, i) => {
-    const button = document.createElement("button");
-    button.className = "answer";
-    button.textContent = answer;
-    button.onclick = () => {
-      document.getElementById("feedback").textContent =
-        i === s.correct
-        ? "أحسنت! إجابة صحيحة ✨ " + s.feedback
-        : "حاولي مرة أخرى وفكّري في معنى المحطة.";
-    };
-    area.appendChild(button);
-  });
-  document.getElementById("stationModal").classList.add("open");
-  document.body.style.overflow = "hidden";
-}
-
-function closeStation() {
-  document.getElementById("stationModal").classList.remove("open");
-  document.body.style.overflow = "";
-}
-
-function outsideClose(event) {
-  if (event.target.id === "stationModal") closeStation();
-}
-
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") closeStation();
-});
-</script>
 </body>
 </html>
-```
+
